@@ -14,4 +14,6 @@ class Estado extends Model
     public $incrementing = false;
     public $timestamps = false;
     protected $attributes = ['poblacion', 'nombre', 'code'];
+
+    
 }

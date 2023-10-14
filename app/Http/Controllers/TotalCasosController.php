@@ -36,18 +36,18 @@ class TotalCasosController extends Controller
 
     }
 
-    public function totalCasosPorEstado() {
-        $estados = Estado::all();
-        $casosPorEstado = [];
 
-        foreach ($estados as $estado) {
-            $casosPorEstado[$estado->id] = [
-                'confirmados' => Confirmado::where('ESTADO_ID', $estado->id)->sum('CASOS'),
-                /*'sospechosos' => Sospechoso::where('ESTADO_ID', $estado->id)->sum('CASOS'),
-                'negativos' => Negativo::where('ESTADO_ID', $estado->id)->sum('CASOS'),
-                'defunciones' => Defuncion::where('ESTADO_ID', $estado->id)->sum('CASOS'),*/
-            ];
-        }
+
+    public function totalCasosPorEstado($id) {
+        $estados = Estado::all();
+
+        $casosPorEstado = [
+            'estado' => Estado::find($id)->NOMBRE,
+            'confirmados' => Confirmado::where('ESTADO_ID', $id)->sum('CASOS'),
+            'sospechosos' => Sospechoso::where('ESTADO_ID', $id)->sum('CASOS'),
+            'negativos' => Negativo::where('ESTADO_ID', $id)->sum('CASOS'),
+            'defunciones' => Defuncion::where('ESTADO_ID', $id)->sum('CASOS')
+        ];
 
         return response()->json($casosPorEstado);
     }
