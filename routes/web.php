@@ -3,6 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\ConfirmadoController;
+use App\Http\Controllers\DefuncionController;
+use App\Http\Controllers\NegativoController;
+use App\Http\Controllers\SospechosoController;
+use App\Http\Controllers\TotalCasosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +38,10 @@ require __DIR__.'/auth.php';
 
 Route::resource('/estados',EstadoController::class);
 Route::resource('/confirmados',ConfirmadoController::class);
+
+Route::resource('/defunciones',DefuncionController::class);
+Route::resource('/negativos',NegativoController::class);
+Route::resource('/sospechosos',SospechosoController::class);
+
+Route::get('/total-casos', [TotalCasosController::class, 'totalCasos']);
+Route::get('/total-casos-estado', [TotalCasosController::class, 'totalCasosPorEstado']);

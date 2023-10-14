@@ -12,4 +12,9 @@ class ConfirmadoController extends Controller
         
         dd(Confirmado::find($id));
     }
+
+    public function totalConfirmados() {
+        $totalSumConfirmados = Confirmado::sum('CASOS');
+        return $totalSumConfirmados;
+    }
 }
