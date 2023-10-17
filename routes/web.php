@@ -43,5 +43,5 @@ Route::resource('/confirmados',ConfirmadoController::class);
 Route::resource('/negativos',NegativoController::class);
 Route::resource('/sospechosos',SospechosoController::class);*/
 
-Route::get('/total-casos', [TotalCasosController::class, 'totalCasos']);
-Route::get('/total-casos-estado/{id}', [TotalCasosController::class, 'totalCasosPorEstado']);
+//Route::get('/total-casos', [TotalCasosController::class, 'totalCasos']);
+//Route::get('/total-casos-estado/{id}', [TotalCasosController::class, 'totalCasosPorEstado']);

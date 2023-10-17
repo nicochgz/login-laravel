@@ -8,9 +8,16 @@ use App\Models\Estado;
 
 class EstadoController extends Controller
 {
-    public function show(string $id): View 
+    public function show(string $id)
     {
-        
-        dd(Estado::find($id));
+        //dd(Estado::find($id));
+
+        echo "<B>".Estado::find($id)->NOMBRE."</B><br>";
+    }
+
+    public function index() {
+        foreach (Estado::get() as $estado) {
+            echo "<B>".$estado->NOMBRE."</B><br>";
+        }
     }
 }
