@@ -15,18 +15,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import 'vuejs-datatable/dist/themes/bootstrap-4.esm';
-import { VuejsDatatableFactory } from 'vuejs-datatable';
-Vue.use(VuejsDatatableFactory);
-Vue.component('datatable-component', require('./components/DatatableComponent.vue').default);
-
-/*import DatatableComponent from './components/DatatableComponent.vue';
-app.component('datatable-component', DatatableComponent);*/
-
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
-
-
 
 /**
  * The following block of code may be used to automatically register your
