@@ -17,8 +17,8 @@ class Estado extends Model
     public $timestamps = false;
     protected $attributes = ['poblacion', 'nombre', 'code'];
 
-    public function confirmados() {
-        return $this->hasMany(Confirmado::class, 'ESTADO_ID');
+    public function confirmados(): HasMany {
+        return $this->hasMany(Confirmado::class);
     }
     
 }
