@@ -10,12 +10,12 @@ use App\Models\Estado;
 class Confirmado extends Model
 {
     protected $table = 'confirmados';
-    //protected $primaryKey = 'ESTADO_ID';
+    protected $primaryKey = 'ESTADO_ID';
     public $incrementing = false;
     public $timestamps = false;
-    protected $attributes = ['ESTADO_ID', 'FECHA', 'CASOS'];
+    protected $attributes = ['FECHA', 'CASOS'];
 
     public function estado(): BelongsTo {
-        return $this->belongsTo(Estado::class);
+        return $this->belongsTo(Estado::class, 'ESTADO_ID', 'id');
     }
 }

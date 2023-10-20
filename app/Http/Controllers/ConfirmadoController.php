@@ -39,13 +39,15 @@ class ConfirmadoController extends Controller
     }
 
     public function getCasosConfirmadosEstado($idEstado) {
+        
         $estado = Estado::find($idEstado);
         $totalCasos = $estado->confirmados->sum('CASOS');
-        //echo $totalCasos;
         echo "Casos confirmados de ".$estado->NOMBRE.": ".$totalCasos;
     }
 
     public function getCasosDesglosados() {
+        
+        
         $estados = Estado::all();
         $totalCasos = 0;
         foreach ($estados as $estado) {
