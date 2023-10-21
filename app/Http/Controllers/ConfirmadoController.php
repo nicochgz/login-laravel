@@ -66,4 +66,19 @@ class ConfirmadoController extends Controller
         self::getCasosConfirmadosEstado($idEstado);
     }
 
+    
+
+    public function getConfirmados(){
+        $estados = Estado::all();
+        foreach ($estados as $estado) {
+            $casosE = $estado->confirmados->sum('CASOS');
+            $confirmadosEstado[] = [
+                'id_estado' => $estado->ID,
+                'estado_nombre' => $estado->NOMBRE,
+                'confirmados' => $casosE
+            ];
+        }
+        return response()->json($confirmadosEstado);
+    }
+
 }

@@ -21,7 +21,14 @@ import 'datatables.net-select-bs5';
 import DatatableComponent from './components/DatatableComponent.vue';
 app.component('DataTable', DataTable);
 DataTable.use(DataTablesLib);
-app.component('datatable-component', DatatableComponent)
+app.component('datatable-component', DatatableComponent);
+
+
+import GraficaCasosComponent from './components/GraficaCasosComponente.vue'
+app.component('grafica-casos-component', GraficaCasosComponent);
+
+import CasosComponente from './components/CasosComponente.vue'
+app.component('casos-componente', CasosComponente);
 
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);

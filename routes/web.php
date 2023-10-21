@@ -48,7 +48,18 @@ Route::resource('/sospechosos',SospechosoController::class);*/
 
 Route::get('/estados/getEstados', [EstadoController::class,'getEstados']);
 Route::resource('/estados',EstadoController::class);
+
+Route::get('/confirmados/getconfirmados', [ConfirmadoController::class,'getConfirmados']);
 Route::resource('/confirmados',ConfirmadoController::class);
+
+Route::get('/defunciones/getdefunciones', [DefuncionController::class,'getDefunciones']);
 Route::resource('/defunciones',DefuncionController::class);
+
+Route::get('/negativos/getnegativos', [NegativoController::class,'getNegativos']);
 Route::resource('/negativos',NegativoController::class);
+
+Route::get('/sospechosos/getsospechosos', [SospechosoController::class,'getSospechosos']);
 Route::resource('/sospechosos',SospechosoController::class);
+
+Route::resource('/casos',TotalCasosController::class);
+//Route::get('/casos/getCasos',[TotalCasosController::class,'getCasosTotales']);

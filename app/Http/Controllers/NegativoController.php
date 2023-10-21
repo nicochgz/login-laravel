@@ -41,4 +41,19 @@ class NegativoController extends Controller
     public function show($idEstado){
         self::getCasosNegativosEstado($idEstado);
     }
+
+
+
+    public function getNegativos(){
+        $estados = Estado::all();
+        foreach ($estados as $estado) {
+            $casosE = $estado->negativos->sum('CASOS');
+            $negativosEstado[] = [
+                'id_estado' => $estado->ID,
+                'estado_nombre' => $estado->NOMBRE,
+                'negativos' => $casosE
+            ];
+        }
+        return response()->json($negativosEstado);
+    }
 }

@@ -41,4 +41,18 @@ class SospechosoController extends Controller
     public function show($idEstado){
         self::getCasosSospechososEstado($idEstado);
     }
+
+
+    public function getSospechosos(){
+        $estados = Estado::all();
+        foreach ($estados as $estado) {
+            $casosE = $estado->sospechosos->sum('CASOS');
+            $sospechososEstado[] = [
+                'id_estado' => $estado->ID,
+                'estado_nombre' => $estado->NOMBRE,
+                'sospechosos' => $casosE
+            ];
+        }
+        return response()->json($sospechososEstado);
+    }
 }

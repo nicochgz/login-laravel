@@ -41,4 +41,18 @@ class DefuncionController extends Controller
     public function show($idEstado){
         self::getCasosDefuncionesEstado($idEstado);
     }
+
+
+    public function getDefunciones(){
+        $estados = Estado::all();
+        foreach ($estados as $estado) {
+            $casosE = $estado->defunciones->sum('CASOS');
+            $defuncionesEstado[] = [
+                'id_estado' => $estado->ID,
+                'estado_nombre' => $estado->NOMBRE,
+                'defunciones' => $casosE
+            ];
+        }
+        return response()->json($defuncionesEstado);
+    }
 }

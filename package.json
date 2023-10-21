@@ -21,6 +21,7 @@
         "vue": "^3.2.37"
     },
     "dependencies": {
+        "@amcharts/amcharts4": "^4.10.38",
         "datatables.net-bs5": "^1.13.6",
         "datatables.net-select-bs5": "^1.7.0",
         "datatables.net-vue3": "^2.1.3"
