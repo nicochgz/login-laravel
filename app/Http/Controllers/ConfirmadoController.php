@@ -53,7 +53,7 @@ class ConfirmadoController extends Controller
         foreach ($estados as $estado) {
             $casosE = $estado->confirmados->sum('CASOS');
             $totalCasos += $casosE;
-            echo "Casos por el estado <B>".$estado->NOMBRE."</B> :".$casosE."<br>";
+            echo "Casos por el estado <B>".$estado->NOMBRE."</B> : ".$casosE."<br>";
         }
         echo "Casos totales confirmados: ".$totalCasos;
     }

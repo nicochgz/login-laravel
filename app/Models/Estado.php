@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Confirmado;
+use App\Models\Defuncion;
+use App\Models\Negativo;
+use App\Models\Sospechoso;
 
 class Estado extends Model
 {
@@ -20,6 +23,18 @@ class Estado extends Model
 
     public function confirmados(): HasMany {
         return $this->hasMany(Confirmado::class);
+    }
+
+    public function defunciones(): HasMany {
+        return $this->hasMany(Defuncion::class);
+    }
+
+    public function negativos(): HasMany {
+        return $this->hasMany(Negativo::class);
+    }
+
+    public function sospechosos(): HasMany {
+        return $this->hasMany(Sospechoso::class);
     }
 
     /*public function confirmados(): BelongsTo {

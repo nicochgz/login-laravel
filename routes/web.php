@@ -49,3 +49,6 @@ Route::resource('/sospechosos',SospechosoController::class);*/
 Route::get('/estados/getEstados', [EstadoController::class,'getEstados']);
 Route::resource('/estados',EstadoController::class);
 Route::resource('/confirmados',ConfirmadoController::class);
+Route::resource('/defunciones',DefuncionController::class);
+Route::resource('/negativos',NegativoController::class);
+Route::resource('/sospechosos',SospechosoController::class);

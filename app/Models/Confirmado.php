@@ -16,6 +16,6 @@ class Confirmado extends Model
     protected $attributes = ['FECHA', 'CASOS'];
 
     public function estado(): BelongsTo {
-        return $this->belongsTo(Estado::class, 'ESTADO_ID', 'id');
+        return $this->belongsTo(Estado::class);
     }
 }
